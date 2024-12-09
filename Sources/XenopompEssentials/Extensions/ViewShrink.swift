@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Dimensions {
+public enum Dimensions {
     case width, height, both
 }
 
