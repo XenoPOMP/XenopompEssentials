@@ -30,7 +30,7 @@ struct Shrink: ViewModifier {
 
 extension View {
     /// Shrinks view to whole width/height/both dimensions.
-    func shrink(at dimension: Dimensions) -> some View {
+    public func shrink(at dimension: Dimensions) -> some View {
         modifier(Shrink(dimension: dimension))
     }
 }
