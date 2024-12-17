@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-enum XAlignment {
+public enum XAlignment {
     case left, center, right
 }
 
-struct HorizontalAlign<Content: View>: View {
+public struct HorizontalAlign<Content: View>: View {
     var alignment: XAlignment
     @ViewBuilder let content: Content?
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 0) {
             switch alignment {
                 case .left:

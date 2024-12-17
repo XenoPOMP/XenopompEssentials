@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-enum YAlignment {
+public enum YAlignment {
     case top, center, bottom
 }
 
-struct VerticalAlign<Content: View>: View {
+public struct VerticalAlign<Content: View>: View {
     var alignment: YAlignment
     @ViewBuilder let content: Content?
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 0) {
             switch alignment {
             case .top:
