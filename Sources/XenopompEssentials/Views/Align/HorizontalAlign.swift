@@ -8,7 +8,7 @@
 import SwiftUI
 
 public enum XAlignment {
-    case left, center, right
+    case leading, center, trailing
 }
 
 public struct HorizontalAlign<Content: View>: View {
@@ -29,7 +29,7 @@ public struct HorizontalAlign<Content: View>: View {
     public var body: some View {
         HStack(spacing: 0) {
             switch alignment {
-                case .left:
+                case .leading:
                     content
                     Spacer()
                     
@@ -38,7 +38,7 @@ public struct HorizontalAlign<Content: View>: View {
                     content
                     Spacer()
                     
-                case .right:
+                case .trailing:
                     Spacer()
                     content
             }
@@ -48,16 +48,16 @@ public struct HorizontalAlign<Content: View>: View {
 
 #Preview {
     VStack {
-        HorizontalAlign(alignment: .left) {
-            Text("Left")
+        HorizontalAlign(alignment: .leading) {
+            Text("Leading")
         }
         
         HorizontalAlign(alignment: .center) {
             Text("Center")
         }
         
-        HorizontalAlign(alignment: .right) {
-            Text("Right")
+        HorizontalAlign(alignment: .trailing) {
+            Text("Trailing")
         }
     }
     .shrink(at: .both)
