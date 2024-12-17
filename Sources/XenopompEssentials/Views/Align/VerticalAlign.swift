@@ -13,15 +13,7 @@ enum YAlignment {
 
 struct VerticalAlign<Content: View>: View {
     var alignment: YAlignment
-    var content: Content?
-    
-    init(
-        alignment: YAlignment,
-        @ViewBuilder content: () -> Content
-    ) {
-        self.alignment = alignment
-        self.content = content()
-    }
+    @ViewBuilder let content: Content?
 
     var body: some View {
         VStack(spacing: 0) {

@@ -13,31 +13,23 @@ enum XAlignment {
 
 struct HorizontalAlign<Content: View>: View {
     var alignment: XAlignment
-    var content: Content?
-    
-    init(
-        alignment: XAlignment,
-        @ViewBuilder content: () -> Content
-    ) {
-        self.alignment = alignment
-        self.content = content()
-    }
+    @ViewBuilder let content: Content?
 
     var body: some View {
         HStack(spacing: 0) {
             switch alignment {
-            case .left:
-                content
-                Spacer()
-                
-            case .center:
-                Spacer()
-                content
-                Spacer()
-                
-            case .right:
-                Spacer()
-                content
+                case .left:
+                    content
+                    Spacer()
+                    
+                case .center:
+                    Spacer()
+                    content
+                    Spacer()
+                    
+                case .right:
+                    Spacer()
+                    content
             }
         }
     }
