@@ -13,7 +13,18 @@ public enum XAlignment {
 
 public struct HorizontalAlign<Content: View>: View {
     var alignment: XAlignment
-    @ViewBuilder let content: Content?
+    var content: Content?
+    
+    public init(
+        alignment: XAlignment, content: (() -> Content)?
+    ) {
+        self.alignment = alignment
+        self.content = nil
+        
+        if let content = content {
+            self.content = content()
+        }
+    }
 
     public var body: some View {
         HStack(spacing: 0) {
