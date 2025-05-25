@@ -61,6 +61,18 @@ extension View {
                 .padding(20)
                 .background(Color.red)
                 .clipShape(.rect(cornerRadius: 12))
+            
+            VStack {
+                VerticalAlign(alignment: .top) {
+                    Text("Shrinked to .topLeading (use VerticalAlign also)!")
+                        .shrink(at: .width, align: .topLeading)
+                }
+            }
+            .frame(minHeight: 200)
+            .shrink(at: .width, align: .topLeading)
+            .padding(20)
+            .background(Color.red)
+            .clipShape(.rect(cornerRadius: 12))
         }
     }
 }
